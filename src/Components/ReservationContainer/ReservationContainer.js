@@ -13,7 +13,7 @@ function ReservationContainer({ reservations }) {
       number={reservation.number}/>;
   });
 
-  return <section>{reservationCards}</section>;
+  return <section className='reservation-container'>{reservationCards}</section>;
 }
 
 export default ReservationContainer;

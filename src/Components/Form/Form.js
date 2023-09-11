@@ -2,11 +2,10 @@ import { useState } from 'react';
 import './Form.css';
 
 function Form() {
-const {name, setName}= useState('');
-const {date, setDate}= useState('');
-const {time, setTime}= useState('');
-const {numGuests, setNumGuests}= useState('');
-
+  const [name, setName] = useState('');
+  const [date, setDate] = useState('');
+  const [time, setTime] = useState('');
+  const [numGuests, setNumGuests] = useState('');
 
   return (
     <form>

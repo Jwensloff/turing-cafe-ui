@@ -1,11 +1,19 @@
-import './ReservationContainer.css'
+import './ReservationContainer.css';
+import SingleReservation from '../SingleReservation/SingleReservation';
 
-function ReservationContainer() {
-return(
-  <section>
-    this is the container
-  </section>
-)
+function ReservationContainer({ reservations }) {
+
+  const reservationCards = reservations.map((reservation) => {
+    return <SingleReservation 
+      id={reservation.id} 
+      key={reservation.id} 
+      name={reservation.name}
+      date={reservation.date}
+      time={reservation.time}
+      number={reservation.number}/>;
+  });
+
+  return <section>{reservationCards}</section>;
 }
 
-export default ReservationContainer
+export default ReservationContainer;

@@ -1,0 +1,13 @@
+.form{
+  width: 100%;
+}
+
+.input{
+  margin: 10px;
+
+}
+
+.submit-button{
+  background-color: teal;
+  color: white;
+}

@@ -14,10 +14,8 @@ function Form({ addReservation }) {
     setNumber('');
   };
 
-  // console.log(addReservation)
   const submitReservation = (event) => {
     event.preventDefault();
-    // console.log('the submit button worked')
     const newReservation = {
       id: Date.now(),
       name,
@@ -31,8 +29,9 @@ function Form({ addReservation }) {
   };
 
   return (
-    <form>
+    <form className='form'>
       <input
+      className='input'
         type='text'
         placeholder='Name'
         name='name'
@@ -40,6 +39,7 @@ function Form({ addReservation }) {
         onChange={(event) => setName(event.target.value)}
       />
       <input
+      className='input'
         type='text'
         placeholder='Date (mm/dd)'
         name='date'
@@ -47,6 +47,7 @@ function Form({ addReservation }) {
         onChange={(event) => setDate(event.target.value)}
       />
       <input
+      className='input'
         type='text'
         placeholder='Time'
         name='time'
@@ -54,13 +55,14 @@ function Form({ addReservation }) {
         onChange={(event) => setTime(event.target.value)}
       />
       <input
+      className='input'
         type='text'
         placeholder='Number of Guests'
         name='number'
         value={number}
         onChange={(event) => setNumber(event.target.value)}
       />
-      <button onClick={(event) => submitReservation(event)}>
+      <button className='submit-button' onClick={(event) => submitReservation(event)}>
         Make Reservation
       </button>
     </form>

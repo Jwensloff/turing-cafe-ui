@@ -4,7 +4,7 @@ function SingleReservation({id, name, date, time, number}) {
   return (<section id={id} className='single-reservation-card'> 
     <h2>{name}</h2>
     <p>{date}</p>
-    <p>{time}</p>
+    <p>{time} PM</p>
     <p>Number of guests: {number}</p>
   </section>)
 }

@@ -2,7 +2,7 @@ import './App.css';
 import React, { useEffect, useState } from 'react';
 import Form from '../Form/Form';
 import ReservationContainer from '../ReservationContainer/ReservationContainer';
-import fetchReservations from '../../apiCalls';
+import { postReservation, fetchReservations } from '../../apiCalls';
 
 function App() {
   const [ reservations, setReservations ] = useState([]);
@@ -12,11 +12,14 @@ function App() {
     .then((data) => {
       console.log(data);
       setReservations(data);
-    });
+    }).catch(error => console.log(error))
+    ;
   }, []);
 
   function addReservation(newReservation) {
     setReservations([...reservations, newReservation])
+    postReservation(newReservation)
+    .catch(error => console.log(error))
   }
 
   return (

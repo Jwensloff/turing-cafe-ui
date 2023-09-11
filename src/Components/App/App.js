@@ -22,6 +22,11 @@ function App() {
     .catch(error => console.log(error))
   }
 
+  const cancelReservation = (id) => {
+    const filteredReservations = reservations.filter(reservation => reservation.id !== id);
+      setReservations(filteredReservations)
+  }
+
   return (
     <div className='App'>
       <h1 className='app-title'>Turing Cafe Reservations</h1>
@@ -29,7 +34,7 @@ function App() {
         <Form addReservation={addReservation}/>
       </div>
       <div className='resy-container'>
-        <ReservationContainer reservations={reservations}/>
+        <ReservationContainer reservations={reservations} cancelReservation={cancelReservation}/>
       </div>
     </div>
   );

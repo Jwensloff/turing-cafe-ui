@@ -1,7 +1,7 @@
 import './ReservationContainer.css';
 import SingleReservation from '../SingleReservation/SingleReservation';
 
-function ReservationContainer({ reservations }) {
+function ReservationContainer({ reservations, cancelReservation  }) {
 
   const reservationCards = reservations.map((reservation) => {
     return <SingleReservation 
@@ -10,7 +10,8 @@ function ReservationContainer({ reservations }) {
       name={reservation.name}
       date={reservation.date}
       time={reservation.time}
-      number={reservation.number}/>;
+      number={reservation.number}
+      cancelReservation={cancelReservation}/>;
   });
 
   return <section className='reservation-container'>{reservationCards}</section>;

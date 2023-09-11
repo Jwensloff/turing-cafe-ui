@@ -16,12 +16,13 @@ function Form({ addReservation }) {
 
   const submitReservation = (event) => {
     event.preventDefault();
+    const num = Number(number);
     const newReservation = {
       id: Date.now(),
       name,
       date,
       time,
-      number,
+      number: num,
     };
 
     addReservation(newReservation);
@@ -31,7 +32,7 @@ function Form({ addReservation }) {
   return (
     <form className='form'>
       <input
-      className='input'
+        className='input'
         type='text'
         placeholder='Name'
         name='name'
@@ -39,7 +40,7 @@ function Form({ addReservation }) {
         onChange={(event) => setName(event.target.value)}
       />
       <input
-      className='input'
+        className='input'
         type='text'
         placeholder='Date (mm/dd)'
         name='date'
@@ -47,7 +48,7 @@ function Form({ addReservation }) {
         onChange={(event) => setDate(event.target.value)}
       />
       <input
-      className='input'
+        className='input'
         type='text'
         placeholder='Time'
         name='time'
@@ -55,14 +56,17 @@ function Form({ addReservation }) {
         onChange={(event) => setTime(event.target.value)}
       />
       <input
-      className='input'
+        className='input'
         type='text'
         placeholder='Number of Guests'
         name='number'
         value={number}
         onChange={(event) => setNumber(event.target.value)}
       />
-      <button className='submit-button' onClick={(event) => submitReservation(event)}>
+      <button
+        className='submit-button'
+        onClick={(event) => submitReservation(event)}
+      >
         Make Reservation
       </button>
     </form>

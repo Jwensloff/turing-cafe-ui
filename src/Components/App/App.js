@@ -15,11 +15,15 @@ function App() {
     });
   }, []);
 
+  function addReservation(newReservation) {
+    setReservations([...reservations, newReservation])
+  }
+
   return (
     <div className='App'>
       <h1 className='app-title'>Turing Cafe Reservations</h1>
       <div className='resy-form'>
-        <Form />
+        <Form addReservation={addReservation}/>
       </div>
       <div className='resy-container'>
         <ReservationContainer reservations={reservations}/>
